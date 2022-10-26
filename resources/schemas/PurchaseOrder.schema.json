@@ -1,0 +1,42 @@
+{
+  "$id": "http://itb.ec.europa.eu/sample/PurchaseOrder.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "A JSON representation of EU Purchase Orders",
+  "type": "object",
+  "required": [ "shipTo", "billTo", "orderDate", "items" ],
+  "properties": {
+    "orderDate": { "type": "string" },
+    "shipTo":    { "$ref": "#/definitions/address" },
+    "billTo":    { "$ref": "#/definitions/address" },
+    "comment":   { "type": "string" },
+    "items":     {
+      "type": "array",
+      "items": { "$ref": "#/definitions/item" },
+      "minItems": 1,
+      "additionalItems": false
+    }
+  },
+  "definitions": {
+    "address": {
+      "type": "object",
+      "properties": {
+        "name":   { "type": "string" },
+        "street": { "type": "string" },
+        "city":   { "type": "string" },
+        "zip":    { "type": "number" }
+      },
+      "required": ["name", "street", "city", "zip"]
+    },
+    "item": {
+      "type": "object",
+      "properties": {
+        "partNum":	   { "type": "string" },
+        "productName": { "type": "string" },
+        "quantity":    { "type": "number", "minimum": 0 },
+        "priceEUR":    { "type": "number", "minimum": 0 },
+        "comment":     { "type": "string" }
+      },
+      "required": ["partNum", "productName", "quantity", "priceEUR"]
+    }
+  }
+}

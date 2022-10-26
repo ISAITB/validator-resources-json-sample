@@ -1,0 +1,16 @@
+{
+  "$id": "http://itb.ec.europa.eu/sample/PurchaseOrder-large.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Business rules for large EU Purchase Orders expressed in JSON",
+  "type": "object",
+  "required": [ "items" ],
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "minItems": 10
+    }
+  }
+}
