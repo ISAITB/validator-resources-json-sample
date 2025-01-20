@@ -1,0 +1,31 @@
+{
+    "shipTo": {
+      "name": "John Doe",
+      "street": "Europa Avenue 123",
+      "city": "Brussels",
+      "zip": 1000
+    },
+    "billTo": {
+      "name": "Jane Doe",
+      "street": "Europa Avenue 210",
+      "city": "Brussels",
+      "zip": 1000
+    },
+    "orderDate": "2020-01-22",
+    "comment": "Send in one package please",
+    "items": [
+      {
+        "partNum": "XYZ-123876",
+        "productName": "Mouse",
+        "quantity": 20,
+        "priceEUR": 15.99,
+        "comment": "Confirm this is wireless"
+      },
+      {
+        "partNum": "ABC-32478",
+        "productName": "Keyboard",
+        "quantity": 15,
+        "priceEUR": 25.50
+      }
+    ]
+  }
